@@ -28,9 +28,13 @@
 
         <label>
             Converter <b>para</b>
-            <select>
-                <option>US$ Dólar Americano</option>
-                <option>€ Euro</option>
+            <select class="currency-select" alt="currency-select">
+                <option value="dolar">US$ Dólar Americano</option>
+                <!--Na primeira opção do "<select>" foi colocado um "value" curto para não ter de
+                    forma desnecessária, um nomeação longa e complexa para respostas no "console.log".
+                Nesse caso, o value nomeado como "dolar".-->
+                <option value="euro">€ Euro</option>
+                <!--O mesmo foi feito no "<option>" do Euro, colocando seu value como "euro".-->
             </select>
 
         </label>
@@ -38,24 +42,26 @@
         <label >
             Valor
             <input class="input-value" placeholder="R$ 10.000,00" type="text">
-
+            <!--Aqui foi aplicado uma "class" de nome "input-value" para quardar no JS 
+                dentro da "function convertValues()" como "const inputCurrencyValue" para
+                ser chamado toda vez que ocorrer o evento de "click" do "<button>".-->
         </label>
 
-        <button class="convert-button">Converter</button>
+        <button class="convert-button">Converter</button>       
 
         <section>
-            <div>
+            <div class="currency-box1">
                 <img src="./assets/brasil.png" class="money-box1" alt="Real-Brasil">
-                <p class="currancy">Real</p>
-                <p class="currancy-value-to-convert">R$ 0,00</p>
+                <p class="currency">Real</p>
+                <p class="currency-value-to-convert">R$ 0,00</p>
             </div>
 
-            <img src="./assets/seta.png" class="purple-arrow" alt="purple-arrow">
+            <img class="purple-arrow" src="./assets/seta.png"  alt="purple-arrow">
 
-            <div>
-                <img src="./assets/usa.png" class="money-box2" alt="Dolar-USA">
-                <p class="currancy">Dólar</p>
-                <p class="currancy-value">US$ 0,00</p>
+            <div class="currency-box2">
+                <img class="currency-image" src="./assets/usa.png" class="money-box2">
+                <p id="currency-name" class="currency">Dólar Americano</p>  
+                <p class="currency-value-converted">US$ 0,00</p>
             </div>
         </section>
 
